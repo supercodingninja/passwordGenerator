@@ -6,7 +6,7 @@ var headerTwo = document.querySelector("h2");
     headerTwo.innerHTML="<span>Generate A Password</span>"
 
 var pwBtn = document.querySelector("#pw");
-    // pw.innerHTML="<span>Generate Password</span>"
+    pw.innerHTML="<span>Generate Password</span>"
 
 // Variables of Arrays Containing Alpha-Numeric-Special Characters Allowed For Password Being Generaated, Ref. link: [https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-alphabet-in-jquery] //
 var lowerAlpha = "abcdefghijklmnopqrstuvwxyz".split("");
