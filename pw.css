@@ -14,6 +14,7 @@ body {
 .headerOne {
     color: black;
     font-weight: bolder;
+    font-size: larger;
 }
 
 .passwordCard {
@@ -23,6 +24,7 @@ body {
 .headerTwo {
     color: black;
     font-weight: bold;
+    font-size: large;
 }
 
 .passwordCard-body {
@@ -41,4 +43,5 @@ body {
     background-color: red;
     color: white;
     font-weight: bold;
+    font-size: medium;
 }
