@@ -1,1 +1,44 @@
 /* Style mostly with Javascript! */
+body {
+    background: #ffffff;
+    color: #000000;
+    font-family: Arial, Cambria, Cochin, Georgia, Times New Roman, Sans-Serif;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.headerOne {
+    color: black;
+    font-weight: bolder;
+}
+
+.passwordCard {
+
+}
+
+.headerTwo {
+    color: black;
+    font-weight: bold;
+}
+
+.passwordCard-body {
+
+}
+
+#password {
+
+}
+
+.passwordCard-footer {
+
+}
+
+.button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
