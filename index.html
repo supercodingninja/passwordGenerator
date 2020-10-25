@@ -3,24 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="pw.css" />
         <title>Password Generator</title>
     </head>
+
     <body>
-        <h1 class="title">
-            <!-- Password Generator -->
-        </h1>
+        <div class="wrapper">
+            <header>
+                <h1 class="headerOne">
+                    <!-- Password Generator -->
+                </h1>
+            </header>
 
-        <h2 class="header">
-            <!-- Generate a Password -->
-        </h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="headerTwo">
+                        <!-- Generate A Password -->
+                    </h2>
+                </div>    
 
-        <form class="pasword">
-            <!-- Your Secured Password -->
-        </form>
+                <div class="card-body">
+                    <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password">
+                    </textarea>
+                </div>    
 
-        <button class="button">
-            <!-- Generate Password -->
-        </button>
+                <div class="card-footer">
+                    <button id="pw" class="button">
+                        <!-- Generate Password -->
+                    </button>
+                </div>    
+            </div>
+        </div>
     </body>
-    <script>pw.js</script>
+    <script src="pw.js"></script>
 </html>
