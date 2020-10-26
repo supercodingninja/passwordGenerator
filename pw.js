@@ -24,17 +24,40 @@ var baseTen = "0123456789".split("");
 var specChar = "~!@#$%^&*?".split("");
     console.log(specChar);
 
+var charIndexList = [''];
+
+var password = "";
 // var password = [lowerAlpha + upperAlpha + baseTen + specChar]; // // ?Need pw to be random? //
 
 //  Write Logic, here: Prompts for pw length, Confirms for character sets, etc. //
 function getPassword {
     // I need to inform the user what type of characters are allowed (lowerAlpha, upperAlpha, baseTen, or specChar); and informed the user combination of the characters (lowerAlpha + upperAlpha + baseTen + specChar) are accepted. //
+    prompt('You may choose the length of your password being generated; and the type of characters it may have (special characters, lower/upper case, and numbers, or any combination of the four options).')
 
-    // I need the user to pick a password length, prescribed by the guidelines. //
+    // I need the user to pick a password length, prescribed by the guidelines. Ref. Links: https://www.w3schools.com/jsref/jsref_parseint.asp; and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt //
+    const pwBase = parseInt (prompt('Choose a desire password length, between 6 and 12 characters.'));
 
         // If user picks a length below or higher than password allotment, I need the user to be reminded of the password length allowance. //
+        if (pwBase < 6 || pwBase > 12) {
+            alert('You Must choose a length no greater than 12; and not fewer than 6 characters.')
+        }
+        // If user still picks a value less than 6. //
+        else (pwBase < 6) {
+            alert('Your length desired is too, small!  Choose a number between 6 and 12.')
+        }
+        // If user still picks a value higher than 12. //
+        else (pwBase > 12) {
+            alert('Your option is too, high!  Choose a number between 6 and 12.')
+        }
+        // If user picks a number that is not an integer.  Ref. Link: https://www.w3schools.com/jsref/jsref_isinteger.asp#:~:text=The%20Number.,Otherwise%20it%20returns%20false //
+        else if Number.isInteger(false) {
+            alert('Please speak to your direct supervisor regarding your complications.');
+        }
 
         // If user picks a length within guidelines, began push character length into new variable "charIndexList" (DECLARE THIS VARIABLE INTO AN ARRAY); and move forward to asking user preference on character types. //
+        else if (pwBase => 6 || pwBase =< 12) {
+            push.pwBase.charIndexList; // ? ASK TA during office hours //
+        }
 
     // I need to ask the user characters preference. //
         // ConfirmBox[ref. https://www.npmjs.com/package/yesno-dialog; http://jsfiddle.net/kevalbhatt18/qwkzw3rg/127/; https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options] user "Do you want lowercase characters?" //
@@ -66,20 +89,22 @@ function getPassword {
         // Make a set of random characters from the charIndexList. //
 
             // DO NOT FORGET TO APPEND "charIndexList" to a STRING ""
-    
-    return getPassword;
 
-    // Write function to generate to a password to the #password input //
-    function writePassword() {
-        var password = getPassword();
-            console.log(password);
+    return getPassword;     
+}
 
-        var passwordText = document.querySelector("#password");
-            console.log(passwordText);
+// Write function to generate to a password to the #password input //
+function writePassword() {
+    var password = getPassword();
+        console.log(password);
 
-        passwordText.value = password;
-            console.log(password);
-    }        
+    var passwordText = document.querySelector("#password");
+        console.log(passwordText);
+
+    passwordText.value = password;
+        console.log(password);
+
+        return writePassword;
 }
   
 // Add event listener to password generating button //
