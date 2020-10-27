@@ -71,42 +71,90 @@ function getPassword {
         //         };
         //     }
         // Use instead//
-        let lowerAlpha =confirm('Do you want lowercase characters?')
+        let lowerAlpha =confirm('Do you want lowercase characters?');
             
             // If user chooses  "Yes;" then push to "charIndexList;" and begin next prompt. //
-            if (lowerAlpha == True) {
+            if (lowerAlpha == true) {
                 
                 charIndexList = charIndexList.concat(lowerAlpha);
             }
 
             // If user chooses "No;" then move forward to next prompt. //
-            
+            else (lowerAlpha == false){
+                
+                alert('No problem!');
+
+            }
 
         // Prompt user "Do you want uppercase characters?" //
+        let upperAlpha =confirm('Do you want to use uppercase characters?');
 
             // If user chooses  "Yes;" then push to "charIndexList;" and begin next prompt. //
+            if (upperAlpha == true) {
+                
+                charIndexList = charIndexList.concat(upperAlpha);
+
+            }
 
             // If user chooses "No;" then move forward to next prompt. //
+            else (upperAlpha == false){
+                
+                alert('Do we have a problem?');
+
+            }
 
         // Prompt user "Do you want numeric characters?" //
+        let baseTen =confirm('Do you want numeric characters?');
 
             // If user chooses  "Yes;" then push to "charIndexList;" and begin next prompt. //
+            if (baseTen == true) {
+                
+                charIndexList = charIndexList.concat(baseTen);
+            
+            }
 
             // If user chooses "No;" then move forward to next prompt. //
+            else (baseTen == false){
+            
+                alert('We do not have a problem, do we?');
+            
+            }
 
         // Prompt user "Do you want special characters?" //
+        let specChar =confirm('Do you want to use special characters?');
 
         // If user chooses  "Yes;" then push to "charIndexList;" then select random characters, and return getPassword. //
+        if (specChar == true) {
+                
+            charIndexList = charIndexList.concat(specChar);
+        
+        }
 
             // If user chooses "No;" then check user options. //
+            else (specChar == false){
+        
+                alert('We might have a problem: you must have at least option of characters chosen,');
+            
+            }
 
                 // If user chose "No" to all character options, then alert user that a mininmum of one option must be selected "Yes." //
+                else if (!lowerAlpha && !upperAlpha && !baseTen && !specChar) {
+
+                    alert('You MUST choose one of the four character types criterea.  Please speak to your direct supervisor regarding your complications.');
+
+                }
 
         // Make a set of random characters from the charIndexList. //
+        for (password.length =< pwBase) {
 
-            // DO NOT FORGET TO APPEND "charIndexList" to a STRING ""
+            let ranChar = charIndexList[Math.floor(Math.random() * charIndexList.length)];
+        }
+
+            // DO NOT FORGET TO APPEND "charIndexList" to a STRING "" //
+            password += ranChar;
 
     return getPassword;     
+
 }
 
 // Write function to generate to a password to the #password input //
@@ -120,11 +168,11 @@ function writePassword() {
     passwordText.value = password;
         console.log(password);
 
-        return writePassword;
+    return writePassword;
 }
   
 // Add event listener to password generating button //
-document.getElementById('#confirm').addEventListener('click,' confirm)
+// document.getElementById('#confirm').addEventListener('click,' confirm)
 pwBtn.addEventListener("click", writePassword);
 alert("click", writePassword);
 
