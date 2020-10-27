@@ -35,10 +35,10 @@ function getPassword() {
     alert('You may choose the length of your password being generated; and the type of characters it may have (special characters, lower/upper case, and numbers, or any combination of the four options).');
 
     // I need the user to pick a password length, prescribed by the guidelines. Ref. Links: https://www.w3schools.com/jsref/jsref_parseint.asp; and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt //
-    const pwBase = parseInt(prompt('Choose a desire password length, between 6 and 12 characters.'));
+    const pwBase = parseInt(prompt('Choose a desire password length, between 8 and 128 characters.'));
 
         // If user picks a length below or higher than password allotment, I need the user to be reminded of the password length allowance. //
-        if (pwBase < 6 || pwBase > 12) {
+        if (pwBase < 8 || pwBase > 128) {
             alert('You Must choose a length no greater than 12; and not fewer than 6 characters.');
         }
     
