@@ -138,7 +138,6 @@ function writePassword() {
 // Add event listener to password generating button //
 // document.getElementById('#confirm').addEventListener('click,' confirm)
 pwBtn.addEventListener("click", writePassword);
-alert("click", writePassword);
 
 // jQuery stab in the dark to check event listener.  Ref. Link: https://stackoverflow.com/questions/446892/how-to-find-event-listeners-on-a-dom-node-when-debugging-or-from-the-javascript //
 // events = $._data(this, 'click');
