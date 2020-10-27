@@ -24,39 +24,28 @@ var baseTen = "0123456789".split("");
 var specChar = "~!@#$%^&*?".split("");
     console.log(specChar);
 
-var charIndexList = [''];
+var charIndexList = [];
 
 var password = "";
 // var password = [lowerAlpha + upperAlpha + baseTen + specChar]; // // ?Need pw to be random? //
 
 //  Write Logic, here: Prompts for pw length, Confirms for character sets, etc. //
-function getPassword {
+function getPassword() {
     // I need to inform the user what type of characters are allowed (lowerAlpha, upperAlpha, baseTen, or specChar); and informed the user combination of the characters (lowerAlpha + upperAlpha + baseTen + specChar) are accepted. //
-    prompt('You may choose the length of your password being generated; and the type of characters it may have (special characters, lower/upper case, and numbers, or any combination of the four options).')
+    alert('You may choose the length of your password being generated; and the type of characters it may have (special characters, lower/upper case, and numbers, or any combination of the four options).');
 
     // I need the user to pick a password length, prescribed by the guidelines. Ref. Links: https://www.w3schools.com/jsref/jsref_parseint.asp; and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt //
-    const pwBase = parseInt (prompt('Choose a desire password length, between 6 and 12 characters.'));
+    const pwBase = parseInt(prompt('Choose a desire password length, between 6 and 12 characters.'));
 
         // If user picks a length below or higher than password allotment, I need the user to be reminded of the password length allowance. //
         if (pwBase < 6 || pwBase > 12) {
-            alert('You Must choose a length no greater than 12; and not fewer than 6 characters.')
+            alert('You Must choose a length no greater than 12; and not fewer than 6 characters.');
         }
-        // If user still picks a value less than 6. //
-        else (pwBase < 6) {
-            alert('Your length desired is too, small!  Choose a number between 6 and 12.')
-        }
-        // If user still picks a value higher than 12. //
-        else (pwBase > 12) {
-            alert('Your option is too, high!  Choose a number between 6 and 12.')
-        }
+    
         // If user picks a number that is not an integer.  Ref. Link: https://www.w3schools.com/jsref/jsref_isinteger.asp#:~:text=The%20Number.,Otherwise%20it%20returns%20false //
-        else if Number.isInteger(false) {
+        else if (Number.isInteger(false)) {
             alert('Please speak to your direct supervisor regarding your complications.');
-        }
-
-        // If user picks a length within guidelines, began push character length into new variable "charIndexList" (DECLARE THIS VARIABLE INTO AN ARRAY); and move forward to asking user preference on character types. //
-        else if (pwBase => 6 || pwBase =< 12) {
-            push.pwBase.charIndexList; // ? ASK TA during office hours //
+            return;
         }
 
     // I need to ask the user characters preference. //
@@ -70,6 +59,7 @@ function getPassword {
         //         Cancel: "No";
         //         };
         //     }
+
         // Use instead//
         let lowerAlpha =confirm('Do you want lowercase characters?');
             
@@ -79,13 +69,6 @@ function getPassword {
                 charIndexList = charIndexList.concat(lowerAlpha);
             }
 
-            // If user chooses "No;" then move forward to next prompt. //
-            else (lowerAlpha == false){
-                
-                alert('No problem!');
-
-            }
-
         // Prompt user "Do you want uppercase characters?" //
         let upperAlpha =confirm('Do you want to use uppercase characters?');
 
@@ -93,13 +76,6 @@ function getPassword {
             if (upperAlpha == true) {
                 
                 charIndexList = charIndexList.concat(upperAlpha);
-
-            }
-
-            // If user chooses "No;" then move forward to next prompt. //
-            else (upperAlpha == false){
-                
-                alert('Do we have a problem?');
 
             }
 
@@ -113,13 +89,6 @@ function getPassword {
             
             }
 
-            // If user chooses "No;" then move forward to next prompt. //
-            else (baseTen == false){
-            
-                alert('We do not have a problem, do we?');
-            
-            }
-
         // Prompt user "Do you want special characters?" //
         let specChar =confirm('Do you want to use special characters?');
 
@@ -130,30 +99,25 @@ function getPassword {
         
         }
 
-            // If user chooses "No;" then check user options. //
-            else (specChar == false){
-        
-                alert('We might have a problem: you must have at least option of characters chosen,');
-            
-            }
+        // If user chose "No" to all character options, then alert user that a mininmum of one option must be selected "Yes." //
+        if (!lowerAlpha && !upperAlpha && !baseTen && !specChar) {
 
-                // If user chose "No" to all character options, then alert user that a mininmum of one option must be selected "Yes." //
-                else if (!lowerAlpha && !upperAlpha && !baseTen && !specChar) {
+            alert('You MUST choose one of the four character types criterea.  Please speak to your direct supervisor regarding your complications.');
 
-                    alert('You MUST choose one of the four character types criterea.  Please speak to your direct supervisor regarding your complications.');
+            return;
 
-                }
-
-        // Make a set of random characters from the charIndexList. //
-        for (password.length =< pwBase) {
-
-            let ranChar = charIndexList[Math.floor(Math.random() * charIndexList.length)];
         }
 
+        // Make a set of random characters from the charIndexList. //
+        while (password.length <= pwBase) {
+
+            let ranChar = charIndexList[Math.floor(Math.random() * charIndexList.length)];
+            
             // DO NOT FORGET TO APPEND "charIndexList" to a STRING "" //
             password += ranChar;
+        }
 
-    return getPassword;     
+    return password;     
 
 }
 
