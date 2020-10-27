@@ -60,11 +60,27 @@ function getPassword {
         }
 
     // I need to ask the user characters preference. //
-        // ConfirmBox[ref. https://www.npmjs.com/package/yesno-dialog; http://jsfiddle.net/kevalbhatt18/qwkzw3rg/127/; https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options] user "Do you want lowercase characters?" //
+        // I need to work on ConfirmBox[ref. links: https://github.com/xxjapp/xdialog; https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options https://www.npmjs.com/package/yesno-dialog; http://jsfiddle.net/kevalbhatt18/qwkzw3rg/127/] user "Do you want lowercase characters?" //
+        // function confirm {
+        //     xdialog.confirm('Do you want lowercase characters?')
+        // }; {
+        //     style: 'width: 300px; font-size:1em;'
+        //     buttons {
+        //         Ok: "Yes";
+        //         Cancel: "No";
+        //         };
+        //     }
+        // Use instead//
+        let lowerAlpha =confirm('Do you want lowercase characters?')
             
             // If user chooses  "Yes;" then push to "charIndexList;" and begin next prompt. //
+            if (lowerAlpha == True) {
+                
+                charIndexList = charIndexList.concat(lowerAlpha);
+            }
 
             // If user chooses "No;" then move forward to next prompt. //
+            
 
         // Prompt user "Do you want uppercase characters?" //
 
@@ -108,6 +124,7 @@ function writePassword() {
 }
   
 // Add event listener to password generating button //
+document.getElementById('#confirm').addEventListener('click,' confirm)
 pwBtn.addEventListener("click", writePassword);
 alert("click", writePassword);
 
