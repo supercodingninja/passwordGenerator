@@ -1,2 +1,2 @@
 # passwordGenerator
-###### (Deployed Application)[https://supercodingninja.github.io/passwordGenerator/]
+###### [Deployed Application](https://supercodingninja.github.io/passwordGenerator/)
