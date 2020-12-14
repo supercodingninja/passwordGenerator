@@ -3,6 +3,7 @@ body {
     background: #ffffff;
     color: #000000;
     font-family: Arial, Cambria, Cochin, Georgia, Times New Roman, Sans-Serif;
+    align-items: center;
   }
 
   .wrapper {
